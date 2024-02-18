@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<section class="row">
+			<div class="col-12">
+				<h1>Garage V.Parrot</h1>
+				<p>Bienvenue sur notre site</p>
+			</div>
+
+			<div class="col-12">
+				<div class="card m-2">
+					<div class="card-body">
+						<h2 class="card-title">Liste des différents services</h2>
+						<img src="images/" class="img-fluid" alt="image service">
+						<img src="images/" class="img-fluid" alt="image service">
+						<img src="images/" class="img-fluid" alt="image service">
+						<div class="container text-center">
+							<a href="/services" class="btn btn-secondary m-3">En savoir plus</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12">
+				<div class="card m-2">
+					<div class="card-body">
+						<h2 class="card-title">Les Véhicules d'occasion</h2>
+						<img src="images/" class="img-fluid" alt="image voiture">
+						<img src="images/" class="img-fluid" alt="image voiture">
+						<img src="images/" class="img-fluid" alt="image voiture">
+						<div class="container text-center">
+							<a href="/voitures" class="btn btn-secondary m-3">Voir les véhicules</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12">
+				<div class="card m-2">
+					<div class="card-body">
+						<h2 class="card-title">Le Garage</h2>
+						<img src="images/" class="img-fluid" alt="image garage">
+						<img src="images/" class="img-fluid" alt="image garage">
+						<img src="images/" class="img-fluid" alt="image garage">
+						<div class="container text-center">
+							<a href="/#" class="btn btn-secondary m-3">En savoir plus</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</main>
+{% endblock %}
+

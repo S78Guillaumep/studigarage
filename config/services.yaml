@@ -17,8 +17,12 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Entity/'
+            #- '../src/Entity/' # Remove this line to include entities
             - '../src/Kernel.php'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    # Include explicitly the entity namespace for autowiring
+    App\Entity\:
+        resource: '../src/Entity/'
+        # This ensures that the entities are autowirable
+        # You can further specify configuration if needed
+        autowire: true
