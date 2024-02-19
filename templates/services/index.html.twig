@@ -1,7 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les Services{% endblock %}
+{% block title %}Les Services
+{% endblock %}
 
 {% block body %}
-<h1> Les Services proposés </h1>
+<main class="container">
+    <section class="row">
+		<h1>Les Services proposés</h1>
+	<div class="row">
+		{% for service in services %}
+			<div class="col-12 -md-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">{{ service.name }}</h5>
+						<p class="card-text">{{ service.description }}</p>
+						<p class="card-text">Prix:{{ service.price }}€</p>
+                    </div>
+				</div>
+			</div>
+		{% endfor %}
+    </section>
+</main>
 {% endblock %}

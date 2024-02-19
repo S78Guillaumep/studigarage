@@ -1,7 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Détails de {{ car.name }} {% endblock %}
+{% block title %}Détails de {{ car.name }}{% endblock %}
 
 {% block body %}
-<h1> Détails de {{ car.name }}</h1>
+<main class="container">
+    <section class="row">
+        <div class="col-12">
+            <h1>Détails de {{ car.name }}</h1>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.name }}</h5>
+                    <p class="card-text">{{ car.description }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Année : {{ car.year }}</li>
+                        <li class="list-group-item">Prix : {{ car.price }} €</li>
+                        <li class="list-group-item">Kilométrage : {{ car.distance }} km</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock %}

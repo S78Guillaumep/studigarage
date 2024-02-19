@@ -4,13 +4,26 @@
 
 {% block body %}
 <main class="container">
-		<section class="row">
-			<div class="col-12">
-				<h1>Les Véhicules d'occasion</h1>
-			</div>
-            
-            </section>
-            </main>
+    <section class="row">
 
-
+	<h1> Véhicules d'occasion</h1>
+        {% for car in cars %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.name }}</h5>
+                    <p class="card-text">{{ car.description }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Année : {{ car.year }}</li>
+                        <li class="list-group-item">Prix : {{ car.price }} €</li>
+                        <li class="list-group-item">Kilométrage : {{ car.distance }} km</li>
+                    </ul>
+					<a href="{{ path('cars_details', {'name': car.name}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</main>
 {% endblock %}
+
