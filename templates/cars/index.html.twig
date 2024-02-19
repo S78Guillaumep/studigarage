@@ -4,26 +4,85 @@
 
 {% block body %}
 <main class="container">
-    <section class="row">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="searchHeading">
+                        <h5 class="mb-0">
+                            <button class="btn btn-primary" data-toggle="collapse" data-target="#searchCollapse" aria-expanded="true" aria-controls="searchCollapse">
+                                Filtre de recherche
+                            </button>
+                        </h5>
+                    </div>
 
-	<h1> Véhicules d'occasion</h1>
-        {% for car in cars %}
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ car.name }}</h5>
-                    <p class="card-text">{{ car.description }}</p>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Année : {{ car.year }}</li>
-                        <li class="list-group-item">Prix : {{ car.price }} €</li>
-                        <li class="list-group-item">Kilométrage : {{ car.distance }} km</li>
-                    </ul>
-					<a href="{{ path('cars_details', {'name': car.name}) }}" class="btn btn-primary">Voir les détails</a>
+                    <div id="searchCollapse" class="collapse show" aria-labelledby="searchHeading" data-parent="#accordion">
+                        <div class="card-body">
+                            <form id="search-form">
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="search" id="search-input" class="form-control" placeholder="Nom...">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="year-min">Année min :</label>
+                                        <input type="number" name="year-min" id="year-min" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="year-max">Année max :</label>
+                                        <input type="number" name="year-max" id="year-max" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="price-min">Prix min :</label>
+                                        <input type="number" name="price-min" id="price-min" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="price-max">Prix max :</label>
+                                        <input type="number" name="price-max" id="price-max" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="distance-min">Kilométrage min :</label>
+                                        <input type="number" name="distance-min" id="distance-min" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="distance-max">Kilométrage max :</label>
+                                        <input type="number" name="distance-max" id="distance-max" class="form-control">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Rechercher</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <section id="cars-section" class="row">
+        <h1> Véhicules d'occasion</h1>
+        {% for car in cars %}
+            <div class="col-md-6 mb-4 car-item" data-year="{{ car.year }}" data-price="{{ car.price }}" data-distance="{{ car.distance }}">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ car.name }}</h5>
+                        <p class="card-text">{{ car.description }}</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Année : {{ car.year }}</li>
+                            <li class="list-group-item">Prix : {{ car.price }} €</li>
+                            <li class="list-group-item">Kilométrage : {{ car.distance }} km</li>
+                        </ul>
+                        <a href="{{ path('cars_details', {'name': car.name}) }}" class="btn btn-primary">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
     </section>
 </main>
-{% endblock %}
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

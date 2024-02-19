@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #D9777F;">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="{{ path('main') }}">V-Parrot</a>
+				<a class="navbar-brand" href="{{ path('main') }}">
+			<img class="w-50" src="../images/V-Parrot.png" alt="logo V-Parrot"></a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -26,21 +27,37 @@
 					</ul>
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						{% if app.user %}
+					{% if 'ROLE_ADMIN' in app.user.roles %}
+						<!-- Si l'utilisateur a le rôle 'ROLE_ADMIN' -->
 						<li class="nav-item">
-							<a class="nav-link" href="#">Mon Compte</a>
+							<a class="nav-link" href="/admin/voitures">Tableau voitures</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/admin/services">Tableau services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/admin/utilisateurs">Tableau utilisateurs</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('app_logout') }}">Me Déconnecter</a>
 						</li>
-						{% else %}
+					{% else %}
+						<!-- Si l'utilisateur n'a pas le rôle d'administrateur -->
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('app_register') }}">M'inscrire
-							</a>
+							<a class="nav-link" href="/profil">Mon Profil</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('app_login') }}">Me Connecter</a>
+							<a class="nav-link" href="{{ path('app_logout') }}">Me Déconnecter</a>
 						</li>
-						{% endif %}
+					{% endif %}
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_register') }}">M'Inscrire</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_login') }}">Me Connecter</a>
+					</li>
+				{% endif %}
 					</ul>
 				</div>
 			</div>

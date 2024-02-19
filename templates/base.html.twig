@@ -18,6 +18,37 @@
         <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
 		{% block javascripts %}{% endblock %}
 		<script src="{{ asset('assets/js/scripts.js') }}" defer></script>
+        
+        <!-- surcharge bootstrap -->
+		<style>
+
+            
+			.navbar, .navbar-nav, .nav-item a {
+				background-color: #D9777F;
+				color: #FFFFFF;
+			}
+            .footer {
+                background-color: #D9777F;
+                color: #FFFFFF;
+            }
+            body {
+                background-color: #D94350;
+                color: #FFFFFF;
+				font-family: 'Barlow', sans-serif;
+            }
+            .btn {
+                background-color: #D92332;
+                color: #FFFFFF;
+                font-family: 'Barlow', sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Rajdhani', sans-serif;
+            }
+            p {
+    			font-family: 'Barlow', sans serif;
+			}
+		</style>	
+        
     </head>
     <body>
         {% include "_partials/_nav.html.twig" %}
