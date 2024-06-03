@@ -25,31 +25,31 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="year-min">Année min :</label>
-                                        <input type="number" name="year-min" id="year-min" class="form-control">
+                                        <input type="number" name="year-min" id="year-min" class="form-control" min="0">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="year-max">Année max :</label>
-                                        <input type="number" name="year-max" id="year-max" class="form-control">
+                                        <input type="number" name="year-max" id="year-max" class="form-control" min="0">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="price-min">Prix min :</label>
-                                        <input type="number" name="price-min" id="price-min" class="form-control">
+                                        <input type="number" name="price-min" id="price-min" class="form-control" min="0">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="price-max">Prix max :</label>
-                                        <input type="number" name="price-max" id="price-max" class="form-control">
+                                        <input type="number" name="price-max" id="price-max" class="form-control" min="0">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="distance-min">Kilométrage min :</label>
-                                        <input type="number" name="distance-min" id="distance-min" class="form-control">
+                                        <input type="number" name="distance-min" id="distance-min" class="form-control" min="0">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="distance-max">Kilométrage max :</label>
-                                        <input type="number" name="distance-max" id="distance-max" class="form-control">
+                                        <input type="number" name="distance-max" id="distance-max" class="form-control" min="0">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Rechercher</button>
@@ -81,7 +81,7 @@
         {% endfor %}
     </section>
 </main>
-
+<script src="{{ asset('assets/js/filtre.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

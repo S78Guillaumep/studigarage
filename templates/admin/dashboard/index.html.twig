@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<main class="container">
+    <section class="row">
+        <div class="col-12">
+            <h1>Tableau de Bord de l'Administrateur</h1>
+            <p>Bienvenue dans l'interface d'administration.</p>
+        </div>
+
+        <div class="col-md-6">  
+            <div class="card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Les Véhicules</h5>
+                    <a href="/vehiculemodification" class="btn btn-secondary m-3">Modifier</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">  
+            <div class="card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Les Services</h5>
+                    <a href="/servicemodification" class="btn btn-secondary m-3">Modifier</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">  
+            <div class="card m-2" >
+                <div class="card-body">
+                    <h5 class="card-title">Les Utilisateurs</h5>
+                    <a href="/utilisateurmodification" class="btn btn-secondary m-3">Modifier</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">  
+            <div class="card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Les Témoignages</h5>
+                    <a href="/temoignagemodification" class="btn btn-secondary m-3">Modifier</a>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+</main>
+
+{% endblock %}

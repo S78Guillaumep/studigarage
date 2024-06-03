@@ -17,14 +17,12 @@ class CarsFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
 
-        // Récupérer toutes les catégories disponibles
         $category = $manager->getRepository(Categories::class)->findAll();
 
             for ($prod = 1; $prod <= 30; $prod++) {
                 $car = new Cars();
-                // Générer un nom de voiture en un seul mot sans espaces ni chiffres
                 $carName = $faker->unique()->word;
-                while (!ctype_alpha($carName)) { // Vérifier que le nom ne contient que des lettres
+                while (!ctype_alpha($carName)) { 
                     $carName = $faker->unique()->word;
                 }
                 $car->setName($carName);

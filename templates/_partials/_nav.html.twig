@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #D9777F;">
+<nav class="navbar navbar-expand-lg" >
 			<div class="container-fluid">
 				<a class="navbar-brand" href="{{ path('main') }}">
 			<img class="w-50" src="../images/V-Parrot.png" alt="logo V-Parrot"></a>
@@ -19,30 +19,25 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="/infos">Informations générales</a>
 						</li>
-						
-								
-							
-						
-						
 					</ul>
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						{% if app.user %}
 					{% if 'ROLE_ADMIN' in app.user.roles %}
 						<!-- Si l'utilisateur a le rôle 'ROLE_ADMIN' -->
 						<li class="nav-item">
-							<a class="nav-link" href="/admin/voitures">Tableau voitures</a>
+							<a class="nav-link" href="/admin">Tableau des administrateurs</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/admin/services">Tableau services</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/admin/utilisateurs">Tableau utilisateurs</a>
+							<a class="nav-link" href="/profil">Mon Profil</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('app_logout') }}">Me Déconnecter</a>
 						</li>
-					{% else %}
-						<!-- Si l'utilisateur n'a pas le rôle d'administrateur -->
+					{% else  'ROLE_DATA_ADMIN' in app.user.roles %}
+						<!-- Si l'utilisateur a le rôle ROLE_DATA_ADMIN -->
+						<li class="nav-item">
+							<a class="nav-link" href="/admin">Tableau des administrateurs</a>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/profil">Mon Profil</a>
 						</li>
@@ -51,9 +46,6 @@
 						</li>
 					{% endif %}
 				{% else %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path('app_register') }}">M'Inscrire</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_login') }}">Me Connecter</a>
 					</li>

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cars Modification{% endblock %}
+
+{% block body %}
+    <h1>Cars à modifier</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Created at</th>
+                <th>Distance</th>
+                <th>Slug</th>
+                <th>year</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for car in cars %}
+            <tr>
+                <td>{{ car.id }}</td>
+                <td>{{ car.name }}</td>
+                <td>{{ car.description }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.created_at }}</td>
+                <td>{{ car.distance }}</td>
+                <td>{{ car.slug }}</td>
+                <td>{{ car.year }}</td>
+                <td>{{ car.type }}</td>
+                <td>
+                    <a href="{{ path('app_carsmodification_show', {'id': car.id}) }}">show</a>
+                    <a href="{{ path('app_carsmodification_edit', {'id': car.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_carsmodification_new') }}">Create new</a>
+{% endblock %}

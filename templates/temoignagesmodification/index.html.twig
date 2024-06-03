@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Temoignage Modification{% endblock %}
+
+{% block body %}
+    <h1>Temoignage à modifier</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for temoignage in temoignages %}
+            <tr>
+                <td>{{ temoignage.id }}</td>
+                <td>{{ temoignage.nom }}</td>
+                <td>
+                    <a href="{{ path('app_temoignagesmodification_show', {'id': temoignage.id}) }}">show</a>
+                    <a href="{{ path('app_temoignagesmodification_edit', {'id': temoignage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_temoignagesmodification_new') }}">Create new</a>
+{% endblock %}

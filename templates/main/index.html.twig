@@ -16,65 +16,105 @@
 					<div class="card-body">
 						<h2 class="card-title">Liste des différents services</h2>
 						<div class="row">
-                        <div class="col-md-4">
-						<img src="images/service1.jpeg" class="img-fluid" alt="image service">
-						</div>
-                        <div class="col-md-4">
-						<img src="images/service2.jpeg" class="img-fluid" alt="image service">
-						</div>
-                        <div class="col-md-4">
-						<img src="images/service3.jpeg" class="img-fluid" alt="image service">
-						</div>
-						<div class="container text-center">
-							<a href="/services" class="btn btn-secondary m-3">En savoir plus</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12">
-				<div class="card m-2">
-					<div class="card-body">
-						<h2 class="card-title">Les Véhicules d'occasion</h2>
-						<div class="row">
-                        <div class="col-md-4">
-						<img src="images/car1.jpeg" class="img-fluid" alt="image voiture">
-						</div>
-                        <div class="col-md-4">
-						<img src="images/car2.jpeg" class="img-fluid" alt="image voiture">
-						</div>
-                        <div class="col-md-4">
-						<img src="images/car3.jpeg" class="img-fluid" alt="image voiture">
-						</div>
-						<div class="container text-center">
-							<a href="/voitures" class="btn btn-secondary m-3">Voir les véhicules</a>
+							<div class="col-md-4">
+								<img src="images/service1.jpeg" class="img-fluid" alt="image service">
+							</div>
+							<div class="col-md-4">
+								<img src="images/service2.jpeg" class="img-fluid" alt="image service">
+							</div>
+							<div class="col-md-4">
+								<img src="images/service3.jpeg" class="img-fluid" alt="image service">
+							</div>
+							<div class="container text-center">
+								<a href="/services" class="btn btn-secondary m-3">En savoir plus</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="col-12">
-				<div class="card m-2">
-					<div class="card-body">
-						<h2 class="card-title">Le Garage</h2>
-						<div class="row">
-                        <div class="col-md-4">
-						<img src="images/garage1.jpeg" class="img-fluid" alt="image garage">
-						</div>
-                        <div class="col-md-4">
-						<img src="images/garage2.jpeg" class="img-fluid" alt="image garage">
-						</div>
-                        <div class="col-md-4">
-						<img src="images/garage3.jpeg" class="img-fluid" alt="image garage">
-						</div>
-						<div class="container text-center">
-							<a href="/infos" class="btn btn-secondary m-3">En savoir plus</a>
+				<div class="col-12">
+					<div class="card m-2">
+						<div class="card-body">
+							<h2 class="card-title">Les Véhicules d'occasion</h2>
+							<div class="row">
+								<div class="col-md-4">
+									<img src="images/car1.jpeg" class="img-fluid" alt="image voiture">
+								</div>
+								<div class="col-md-4">
+									<img src="images/car2.jpeg" class="img-fluid" alt="image voiture">
+								</div>
+								<div class="col-md-4">
+									<img src="images/car3.jpeg" class="img-fluid" alt="image voiture">
+								</div>
+								<div class="container text-center">
+									<a href="/voitures" class="btn btn-secondary m-3">Voir les véhicules</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-		</section>
-	</main>
-{% endblock %}
+				<div class="col-12">
+					<div class="card m-2">
+						<div class="card-body">
+							<h2 class="card-title">Le Garage</h2>
+							<div class="row">
+								<div class="col-md-4">
+									<img src="images/garage1.jpeg" class="img-fluid" alt="image garage">
+								</div>
+								<div class="col-md-4">
+									<img src="images/garage2.jpeg" class="img-fluid" alt="image garage">
+								</div>
+								<div class="col-md-4">
+									<img src="images/garage3.jpeg" class="img-fluid" alt="image garage">
+								</div>
+								<div class="container text-center">
+									<a href="/infos" class="btn btn-secondary m-3">En savoir plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
 
+
+					<div class="row">
+						<div class="col-lg-8 mx-auto">
+							<h2 class="text-center mb-4">Témoignages des visiteurs</h2>
+							<div
+								id="temoignages-list" class="mb-3"><!-- Le contenu des témoignages validés sera ajouté ici -->
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-8 mx-auto">
+							<h2 class="text-center mb-4">Laissez votre témoignage</h2>
+							<form id="formTemoignage">
+								<div class="mb-3">
+									<label for="nom" class="form-label">Nom :</label>
+									<input type="text" class="form-control" id="nom" name="nom" required>
+								</div>
+								<div class="mb-3">
+									<label for="commentaire" class="form-label">Commentaire :</label>
+									<textarea class="form-control" id="commentaire" name="commentaire" rows="4" required></textarea>
+								</div>
+								<div class="mb-3">
+									<label for="note" class="form-label">Note :</label>
+									<select class="form-select" id="note" name="note" required>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-primary">Envoyer</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="{{ asset('assets/js/temoignages.js') }}"></script>
+
+	{% endblock %}

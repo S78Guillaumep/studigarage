@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte Modification{% endblock %}
+
+{% block body %}
+    <h1>Carte à modifier</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carte in cartes %}
+            <tr>
+                <td>{{ carte.id }}</td>
+                <td>{{ carte.nom }}</td>
+                <td>
+                    <a href="{{ path('app_cartemodification_show', {'id': carte.id}) }}">show</a>
+                    <a href="{{ path('app_cartemodification_edit', {'id': carte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cartemodification_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mentions Légales
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<section class="row">
+			<div class="col-12 mentions-légales">
+				<h2>Mentions légales</h2>
+				<ul class="list-group-flush">
+					<h3>Identité de l'entreprise</h3>
+					<li class="list-group-item">Nom de l'entreprise : Garage V-Parrot</li>
+					<li class="list-group-item">Numéro de téléphone : +33 1 23 45 67 89</li>
+					<li class="list-group-item">Adresse e-mail : contact@garageautomax.fr</li>
+					<li class="list-group-item">Forme juridique : SARL</li>
+					<li class="list-group-item">Adresse du siège social : 123 Rue Principale, 75001 Paris, France</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Numéro d'inscription au registre du commerce et des sociétés (RCS)</h3>
+					<li class="list-group-item">Numéro RCS : 123456789</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Numéro de TVA</h3>
+					<li class="list-group-item">Numéro TVA : 123456789</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Directeur de la publication</h3>
+					<li class="list-group-item">Guillaume PONTHONNIER</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Hébergeur du site web</h3>
+					<li class="list-group-item">Nom de l'hébergeur : Hosting Provider</li>
+					<li class="list-group-item">Adresse : 456 Rue de l'Hébergement, 75002 Paris, France</li>
+					<li class="list-group-item">Téléphone : +33 1 23 45 67 89</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Droit d'auteur</h3>
+					<li class="list-group-item">© 2024 Garage V-Parrot. Tous droits réservés.</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Politique de confidentialité</h3>
+					<a class="nav-link active" aria-current="page" href="/confidentiel" style="color: #FFFFFF;">En savoir plus</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-12 cgv">
+				<h2>Conditions générales de vente (CGV)</h2>
+				<ul class="list-group-flush">
+					<h3>Modalités de vente</h3>
+					<li class="list-group-item">Les prix des produits et services sont indiqués en euros, toutes taxes comprises.</li>
+					<li class="list-group-item">Les commandes sont acceptées sous réserve de disponibilité des produits.</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Paiement</h3>
+					<li class="list-group-item"></li>
+					<li class="list-group-item">Les paiements peuvent être effectués par carte bancaire, virement ou espèces.</li>
+					<li class="list-group-item"></li>
+					<li class="list-group-item">Le paiement est exigible immédiatement lors de la commande.</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Garantie</h3>
+					<li class="list-group-item">Les produits bénéficient de la garantie légale de conformité et de la garantie des vices cachés.</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Droit de rétractation</h3>
+					<li class="list-group-item">Le client dispose d'un délai de 14 jours pour exercer son droit de rétractation sans avoir à justifier de motifs ni à payer de pénalités.</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Litiges</h3>
+					<li class="list-group-item">En cas de litige, les parties s'engagent à rechercher une solution amiable avant toute action en justice.</li>
+				</ul>
+			</div>
+
+			<div class="col-12 cgu">
+				<h2>Conditions générales d'utilisation (CGU)</h2>
+				<ul class="list-group-flush">
+					<h3>Utilisation du site</h3>
+					<li class="list-group-item">L'accès et l'utilisation du site sont soumis aux présentes conditions d'utilisation.</li>
+                    <li class="list-group-item">L'utilisateur s'engage à ne pas utiliser le site à des fins illicites ou nuisibles.</li>
+				</ul>
+				<ul class="list-group-flush">
+					<h3>Contenu du site</h3>
+					<li class="list-group-item">Le contenu du site (textes, images, vidéos) est la propriété exclusive de Garage V-Parrot</li>
+                    <li class="list-group-item">Toute reproduction ou utilisation du contenu sans autorisation est interdite.</li>
+				</ul>
+                <ul class="list-group-flush">
+					<h3>Responsabilité</h3>
+                    <li class="list-group-item">Garage V-Parrot décline toute responsabilité en cas d'interruption ou de dysfonctionnement du site.</li>
+                </ul> 
+                <ul class="list-group-flush">
+				    <h3>Liens externes</h3>
+                    <li class="list-group-item">Le site peut contenir des liens vers des sites externes sur lesquels Garage V-Parrot n'a aucun contrôle. Nous déclinons toute responsabilité quant au contenu de ces sites.</li>  
+                </ul>
+                <ul class="list-group-flush">
+				    <h3>Modification des conditions</h3>
+                    <li class="list-group-item">Garage V-Parrot se réserve le droit de modifier les présentes conditions générales d'utilisation à tout moment. Les utilisateurs seront informés des modifications par une notification sur le site.</li>
+                </ul>
+            
+            </div>
+		{% endblock %}

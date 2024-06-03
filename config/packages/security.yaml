@@ -38,9 +38,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/admin, roles: ROLE_DATA_ADMIN }
-         - { path: ^/admin/utilisateurs, roles: ROLE_ADMIN }
-         - { path: ^/admin/services, roles: ROLE_ADMIN }
-         - { path: ^/profil, roles: ROLE_USER }
+         - { path: ^/usersmodification, roles: ROLE_ADMIN }
+         
 
     role_hierarchy:
         ROLE_DATA_ADMIN: ROLE_USER
